@@ -1,0 +1,62 @@
+<div class="container spacer">
+
+  <div class="panel panel-primary" *ngIf="mode==1">
+    <div class="panel-heading">New Contact</div>
+    <div class="panel-body">
+      <div>
+
+        <div class="form-group">
+          <label class="control-label">Title :</label>
+          <input class="form-control" type="text" [(ngModel)]="todo.title" />
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Description :</label>
+          <input class="form-control" type="text" [(ngModel)]="todo.description" />
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Date :</label>
+          <input class="form-control" type="date" [(ngModel)]="todo.date" />
+        </div>
+
+        <button class="btn btn-primary" (click)="saveContact()" >Save</button>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="panel panel-primary" *ngIf="mode==2">
+    <div class="panel-heading">Validation</div>
+    <div class="panel-body">
+      <div>
+
+        <div class="form-group">
+          <label class="control-label">ID :</label>
+          <label>{{todo.id}}</label>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Name :</label>
+          <label>{{todo.title}}</label>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Last Name :</label>
+          <label>{{todo.description}}</label>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Birth date :</label>
+          <label>{{todo.date}}</label>
+        </div>
+
+        <button class="btn btn-primary" (click)="mode=1" >New Todo</button>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,32 @@
+<div class="container spacer">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">Todo List</div>
+
+    <div class="panel-body">
+      <div class="form-group">
+        <label>Mot Clé :</label>
+        <input type="text" [(ngModel)]="motCle" />
+        <button class="btn btn-primary" (click)="search()">Search</button>
+      </div>
+
+      <table class="table table-striped">
+        <tr>
+          <th>ID</th>
+          <th>title</th>
+          <th>description</th>
+          <th>date</th>
+        </tr>
+        <tr *ngFor="let c of pageTodos">
+          <td>{{c.id}}</td>
+          <td>{{c.title}}</td>
+          <td>{{c.description}}</td>
+          <td>{{c.date}}</td>
+          <td><a (click)="onDeleteTodo(c)" class="clickable">Delete</a></td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+
+</div>
